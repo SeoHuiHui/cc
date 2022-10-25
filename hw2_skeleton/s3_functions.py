@@ -26,6 +26,7 @@ def upload_post(file_name, title, text, BUCKET, TABLE):
         }
     )
 
+#사진 url 받기
 def get_url(file_name, BUCKET):
     url=f'https://{BUCKET}.s3.ap-northeast-1.amazonaws.com/{file_name}'     
     return url
@@ -51,7 +52,7 @@ def get_items(TABLE):
 
     return dates, titles, urls, texts
 
-
+#table 삭제
 def delete_post(key, BUCKET, TABLE):
     table.delete_item(
         key={
